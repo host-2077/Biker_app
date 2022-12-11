@@ -12,6 +12,15 @@ masa = float(bikePeso) + float(userPeso) + float(user2Peso) # Peso total en Km
 velocidadMaxMS = (float(horsePower) / 0.3) * 2.5 * masa # Velocidad máxima en M/s
 velocidadMaxKh = velocidadMaxMS * 3.6 / 1000 # Velocidad máxima en Km/h
 print("Tu motocicleta recorrerá la ruta elegida a una velocidad máxima de ", round(velocidadMaxKh, 2))
+
+#------ PHASE 2 -----------------
+recorrido = input("KM")
+# convierte los datos en float aca
+
+tiempo_estimado = recorrido / velocidadMaxKh
+horas = int(tiempo_estimado)
+minutos = int((tiempo_estimado - horas) * 60)
+print("sha la la ", horas, minutos)
 # la distancia es importante solo si quiero saber el tiempo en el que voy a recorrer tal distancia. Es decir, una pregunta que sirve para utioiar tales es: Cuanto tiempo gastare en un recorrido de 150 km. con chala chala la 
 # costeCombustible = # cuanto vale la gasolina 
 # velocidadEstimada = #conductorbased
