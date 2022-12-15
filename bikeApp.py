@@ -8,15 +8,15 @@ import time
 print("Bienvenido a IN PROCESS.")
 userName = input("Para iniciar ingresa tu nombre.")
 userBike = input("Pónle un nombre a tu vehículo.")
-message1 = "Hola ", userName, " soy ", userBike, " y voy a acompañarte en varias travesías. \nEntiendo que no conoces realmente de lo que soy capaz asi que este programa y tu teclado servirán como herramientas para comunicarnos efectivamente.\n> > > > > >\n"
+message1 = "Hola ", userName, " soy ", userBike, " y voy a acompañarte en varias travesías. \nEntiendo que no conoces realmente de lo que soy capaz. \nEste programa y tu teclado servirán como herramientas para comunicarnos efectivamente.\n> > > >\n"
 for i in message1:
     print(i, end="", flush=True)
     time.sleep(0.1)
-message2 = "Dicho esto, iniciemos con los análisis. \nYa que eres todo un maniático de la carretera vamos a empezar por la velocidad máxima que puedes alcanzar con tu peso actual.\n"
+message2 = "Dicho esto, iniciemos con los análisis. \nYa que eres todo un maniaco de la carretera vamos a empezar por la velocidad máxima que puedes alcanzar con tu peso actual.\n"
 for i in message2:
     print(i, end="", flush=True)
     time.sleep(0.1)
-message3 = "Necesitarás: \n- Cilindraje (CC) \n- Caballos de fuerza (HP) \n- Mi peso (" + userBike + ") (KG), \n- Tu peso (" + userName + ") (KG) \n- El peso de tu acompañante si es que existe. (KG)\n> > > > > >"
+message3 = "Necesitarás: \n- Cilindraje (CC) \n- Caballos de fuerza (HP) \n- Mi peso (" + userBike + ") (KG), \n- Tu peso (" + userName + ") (KG) \n- El peso de tu acompañante si es que existe. (KG)\n> > > > > >\n"
 for i in message3:
     print(i, end="", flush=True)
     time.sleep(0.1)
@@ -45,7 +45,10 @@ for i in resultado:
     print(i, end="", flush=True)
     time.sleep(0.1)
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -PHASE 2 - - - -
-
+# El precio por galon actual. $
+# La capacidad de la motocicleta. La cantidad de gasolina que tiene en el momento. 
+# El tiempo en que se gasta la cantidad de gasolina que se tiene en el momento. 
+# Cuantos galones utiliza la motocicleta en promedio. 
 
 
 
@@ -73,8 +76,7 @@ for i in resultado:
     #nrpm x Cilindraje
 
 
-# Quieres conocer la potencia de tu motocicleta en W o en HP 
-
+# Additional feature: Quieres conocer la potencia de tu motocicleta en W o en HP 
 # cuanto le cabe a tu tanque de gasolina?
 # ingresa la cantidad que contiene ahora o si no estas seguro marca X
 # el indicador esta en la mitad, en 
