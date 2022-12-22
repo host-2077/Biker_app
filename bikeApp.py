@@ -1,85 +1,107 @@
 # Biker app. Ver 1.0 
-# Diseñada por Ivan Robayo desde Colombia, América del Sur. 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - READ.ME - - - - 
-# Este es un programa que utiliza funciones básicas en Python para interactuar con el usuario y finalmente brindar información útil acerca de las especificaciones de la motocicleta que se está analizando entre ellas, su velocidad máxima teniendo en cuenta el peso real del usuario, su consumo de combustible y el gasto que puede generar. 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - GitHub: ivrr207 - - - - 
+# Ivan Robayo. COL. 2022.  
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - READ.ME - - - - - - - - - - - - - - -
+# Este programa interactua con el usuario para brindar información útil acerca de las especificaciones de la motocicleta que se requiera analizar.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - GitHub: host-2077 - - - - - - - - - - - - - -
+
 import time
-# Introducción al programa.
 print("Bienvenido a IN PROCESS.")
-userName = input("Para iniciar ingresa tu nombre.")
-userBike = input("Pónle un nombre a tu vehículo.")
-message1 = "Hola ", userName, " soy ", userBike, " y voy a acompañarte en varias travesías. \nEntiendo que no conoces realmente de lo que soy capaz. \nEste programa y tu teclado servirán como herramientas para comunicarnos efectivamente.\n> > > >\n"
-for i in message1:
+user_name = input("Para iniciar ingresa tu nombre.")
+user_bike = input("Asigna un nombre a tu motocicleta.")
+intro_app = "Hola ", user_name, " soy ", user_bike, "\nEste programa y tu teclado servirán como herramientas para comunicarnos efectivamente.\n> > > >\n"
+
+# Loop visual. 
+ 
+for i in intro_app:
     print(i, end="", flush=True)
     time.sleep(0.1)
-message2 = "Dicho esto, iniciemos con los análisis. \nYa que eres todo un maniaco de la carretera vamos a empezar por la velocidad máxima que puedes alcanzar con tu peso actual.\n"
-for i in message2:
+
+intro_vel_max = "Iniciemos con los análisis. \nEmpezaremos por la velocidad máxima que puedes alcanzar con tu peso actual.\n"
+
+# Loop visual.
+
+for i in intro_vel_max:
     print(i, end="", flush=True)
     time.sleep(0.1)
-message3 = "Necesitarás: \n- Cilindraje (CC) \n- Caballos de fuerza (HP) \n- Mi peso (" + userBike + ") (KG), \n- Tu peso (" + userName + ") (KG) \n- El peso de tu acompañante si es que existe. (KG)\n> > > > > >\n"
-for i in message3:
+
+data_vel_max = "Necesitarás: \n- Cilindraje (CC) \n- Caballos de fuerza (HP) \n- Mi peso (" + user_bike + ") (KG), \n- Tu peso (" + user_name + ") (KG) \n- El peso de tu acompañante (KG)\n> > > > > >\n"
+
+# Loop visual.
+
+for i in data_vel_max:
     print(i, end="", flush=True)
     time.sleep(0.1)
+
 # Ingreso de información a las variables requeridas.
 cilindraje = input("Ingresa el cilindraje (CC)")
-horsePower = input("Ingresa los caballos de fuerza (HP)")
-bikePeso = input("Ingresa el peso de la motocicleta (KG)")
-userPeso = input("¿Cuánto pesas? (KG)")
-user2Peso = input("¿Cuánto pesa tu acompañante? (KG) > > > Si no tienes acompañante escribe '0'")
-masa = float(bikePeso) + float(userPeso) + float(user2Peso)
-# Notificación de análisis.
+horse_power = input("Ingresa los caballos de fuerza (HP)")
+bike_kg = input("Ingresa el peso de la motocicleta (KG)")
+user_kg = input("¿Cuánto pesas? (KG)")
+user2_kg = input("¿Cuánto pesa tu acompañante? (KG) > > > Si no tienes acompañante escribe '0'")
+masa = float(bike_kg) + float(user_kg) + float(user2_kg)
+
+# Loop visual.
+
 loading = "A N A L I S A N D O D A T O S / "
 loadingprompt = loading * 3
 for i in loadingprompt:
     print(i, end="", flush=True)
     time.sleep(0.1)
-# Cálculo velocidad máxima de la motocicleta. 
-# Velocidad máxima en Metros / Segundos (M/S):
-velocidadMaxMS = (float(horsePower) / 0.3) * 2.5 * masa
+
+# Cálculo velocidad máxima de la motocicleta. Velocidad máxima en Metros / Segundos (M/S).
+
+velocidadMaxMS = (float(horse_power) / 0.3) * 2.5 * masa
+
 # Velocidad máxima en KM/H
+
 velocidadMaxKh = velocidadMaxMS * 3.6 / 1000
-# 3. Resultado.
+
+# Resultado velocidad máxima. 
+
 print("\n")
-resultado = userName, " con tu peso actual y con la capacidad de ", userBike, " podrás dominar la carretera a una velocidad máxima de ", round(velocidadMaxKh, 2), " KM/H", "\n¡vaya! ¡Que la pasma no se entere!"
-for i in resultado:
+vel_max = user_name, " con tu peso actual y con la capacidad de ", user_bike, " podrás alcanzar una velocidad máxima de ", round(velocidadMaxKh, 2), " KM/H", "\nIncreíble."
+for i in vel_max:
     print(i, end="", flush=True)
     time.sleep(0.1)
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -PHASE 2 - - - -
-# El precio por galon actual. $
-# La capacidad de la motocicleta. La cantidad de gasolina que tiene en el momento. 
-# El tiempo en que se gasta la cantidad de gasolina que se tiene en el momento. 
-# Cuantos galones utiliza la motocicleta en promedio. 
+
+# Prueba de eficiencia de gasolina. - - - - - - - - - - PHASE 2 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+intro_gas_ef = "Ahora realizaremos una prueba de eficiencia de gasolina.\n Necesitarás tener el tanque de", user_bike, "a su máxima capacidad para iniciar la prueba.\nSúbete a la motocicleta, enciende el motor y verifica los siguientes datos\n> > > > > >\n"
+# info_gas_tank = input("¿Quieres ver los resultados en Litros (L) o Galones (GAL)? > > > Escribe 'L' o 'GAL'")
+gas_tank_full = input("Ingresa la capacidad total del tanque > > > ")
+odo_data_1 = input("¿Cuantos KM ves en tu odometro? > > >")
+money_data = input("¿Cuanto pagaste por un galón de gasolina?")
+prompt_gas_ef = "Ahora vas a utilizar tu motocicleta hasta que el tanque de gasolina esté a la mitad de su capacidad. Una vez tengas esta información el programa hará los análisis necesarios para determinar el rendimiento de", user_bike, "\nSi estás listo. Ready. Set. Go. > > > "
+odo_data_2 = input("Ingresa los KM que ves en el odometro ahora que has terminado ")
+distancia_recorrida = float(odo_data_2) - float(odo_data_1)
+gas_tank_fact = float(gas_tank_full) / 2
 
 
 
+# Definimos las funciones que se utilizaran de antemano en la siguiente computación. 
+
+def g_per_km(gas_tank_fact, distancia_recorrida):
+    return gas_tank_fact / distancia_recorrida
+
+gas_ef_result = g_per_km(gas_tank_fact,distancia_recorrida)
+
+gas_used = distancia_recorrida * gas_ef_result
+money_used = int(gas_used) * int(money_data)
+money_used_km = money_used / distancia_recorrida
+
+# money_data_l = money_data / (3.78541 / 1)
 
 
-# recorrido = input("KM")
-# convierte los datos en float aca
 
-# tiempo_estimado = recorrido / velocidadMaxKh
-# horas = int(tiempo_estimado)
-# minutos = int((tiempo_estimado - horas) * 60)
-# print("sha la la ", horas, minutos)
-# la distancia es importante solo si quiero saber el tiempo en el que voy a recorrer tal distancia. Es decir, una pregunta que sirve para utioiar tales es: Cuanto tiempo gastare en un recorrido de 150 km. con chala chala la 
-# costeCombustible = # cuanto vale la gasolina 
-# velocidadEstimada = #conductorbased
-# ------------------------------------
-# llena el tanque hasta la maxima capacidad para iniciar el calculo. 
-# cual es la capacidad de tu tanque de gasolina?
-# cual es el kilometraje actual que ves en el tacometro
-# cuando el tanque se encuentre en la mitad por favor responde. Cuantos kilometros ves ahora en el tacometro?
-# Bonus. si estuviste recorriendo continuamente tu motocicleta. EN cuanto tiempo viste que esta a la mitad?
+# El usuario elige el tipo de medida que va a utilizar.
 
-# litros to Gal 
-# def hpFormula():
-    #nrpm x Cilindraje
+# if info_gas_tank == "L" or "l":
+    # litros = g_per_km(gas_tank_fact,distancia_recorrida) + "Litros por Kilometro."
+    # break
+# elif info_gas_tank == "GAL" or "gal":
+    # galones = g_per_km(gas_tank_fact,distancia_recorrida) + "Galones por Kilometro"
+    # break
 
+# Resultado eficiencia de combustible.
 
-# Additional feature: Quieres conocer la potencia de tu motocicleta en W o en HP 
-# cuanto le cabe a tu tanque de gasolina?
-# ingresa la cantidad que contiene ahora o si no estas seguro marca X
-# el indicador esta en la mitad, en 
-# ingresa el kilometraje actual de tu motocicleta, el que ves en el tacometro
-# ingresa la cantidad de combustible que recargaste en el motor (preferiblemente llena este dato en la estacion de servicio)
-# ingresa 
+gas_ef = "Perfecto. Has recorrido", distancia_recorrida, "KM.", "\nLo que quiere decir que tienes una eficiencia de comustible de ", gas_ef_result, "\n", user_bike, "esta costandote actualmente ", money_used_km, ".", "\nEn este recorrido y en este tiempo has gastado ", money_used, "."
